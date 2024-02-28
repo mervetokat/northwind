@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Product } from '../../Models/product';
-import { ProductResponseModel } from '../../Models/productResponseModel';
 import { get } from 'http';
-import { HttpClient } from '@angular/common/http';  
+ 
 import { response } from 'express';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -15,15 +15,17 @@ import { response } from 'express';
 export class ProductComponent {
   
   products:Product[]=[];
-  apiUrl="https://localhost:44396/api/Products/getall";
+  dataLoaded=false;
+
 
  // productResponseModel:ProductResponseModel;
-constructor(private httpClient:HttpClient){}
+constructor(private productService:ProductService){}
  getProducts()
-{
-  this.httpClient.get<ProductResponseModel>(this.apiUrl).
-  subscribe(response=>{
-  this.products=response.data});
+{this.productService.getProducts().subscribe(response=>{
+  this.products=response.data
+  this.dataLoaded=true;
+})
+  
 }
 } 
 

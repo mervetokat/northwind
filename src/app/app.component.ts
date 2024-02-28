@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { NaviComponent } from "./Components/navi/navi.component";
 import { ProductComponent } from "./Components/product/product.component";
 import { CategoryComponent } from "./Components/category/category.component";
+import { TodoComponent} from './Components/todo/todo.component';
 import { HttpClientModule} from '@angular/common/http';
 
 @Component({
@@ -10,7 +11,7 @@ import { HttpClientModule} from '@angular/common/http';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, NaviComponent, ProductComponent, CategoryComponent,HttpClientModule]
+    imports: [RouterOutlet, NaviComponent, ProductComponent, CategoryComponent, HttpClientModule, TodoComponent]
 })
 export class AppComponent {
   title = 'northwind';
