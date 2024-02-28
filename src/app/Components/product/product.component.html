@@ -1,7 +1,14 @@
 @if (dataLoaded===false) {<div class="spinner-border text-warning" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>}
+  <div class="mb-3">
+    <label for="filterText" class="form-label">Ürün ara</label>
+    <input type="text"  ng-Model="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
+  </div>
+  <div if="filterText" class="alert alert-primary">
 
+{{filterText}} aradiniz
+  </div>
 <table>
     <tr >
        
@@ -9,9 +16,10 @@
            
                 @for (product of products; track product.productId) {
                 <th>  {{ product.productId}}</th>
-                <th>  {{ product.productName}}</th>
+                <th>  {{ product.productName }}</th>
                 <td>  {{ product.categoryId}}</td>
-                <td>  {{ product.unitPrice}}</td>
+                <td>  {{ product.unitPrice }}</td>
+                <td>  {{ product.unitPrice |vatAdded:10 }}</td>
                 <td>  {{ product.unitsInStock}}</td>
                 } 
                 
