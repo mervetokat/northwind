@@ -6,13 +6,17 @@ import { CategoryComponent } from "./Components/category/category.component";
 import { TodoComponent} from './Components/todo/todo.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, NaviComponent, FormsModule, ProductComponent, CategoryComponent, HttpClientModule, TodoComponent]
+    imports: [RouterOutlet, NaviComponent,BrowserAnimationsModule,
+      ToastrModule, FormsModule, ProductComponent, CategoryComponent, HttpClientModule, TodoComponent]
 })
 export class AppComponent {
   title = 'northwind';

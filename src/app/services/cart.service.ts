@@ -1,0 +1,36 @@
+import { Injectable } from '@angular/core';
+import { Product } from '../Models/product';
+import { CartItems } from '../Models/cartitems';
+import { CartItem } from '../Models/cartitem';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CartService {
+
+  constructor() { }
+  addToCart(product:Product)
+  {
+    let item=CartItems.find(c=>c.product.productId===product.productId);
+    if(item)
+    {
+      item.quantity+=1;
+    }
+    else{
+      let cartItem=new CartItem();
+      cartItem.product=product;
+      cartItem.quantity=1;
+      CartItems.push(cartItem)
+    }
+
+
+  }
+  removeFromCart(product:Product)
+  {
+    
+  }
+  list():CartItem[]
+  {
+    return CartItems;
+  }
+}

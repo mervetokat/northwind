@@ -9,22 +9,27 @@
 
 {{filterText}} aradiniz
   </div>
+  
 <table>
+  <tbody>
     <tr | filterPipe:filterText >
        
 
            
-                @for (product of products; track product.productId) {
-                <th>  {{ product.productId}}</th>
-                <th>  {{ product.productName }}</th>
-                <td>  {{ product.categoryId}}</td>
-                <td>  {{ product.unitPrice }}</td>
-                <td>  {{ product.unitPrice |vatAdded:10 }}</td>
-                <td>  {{ product.unitsInStock}}</td>
-                } 
-                
-              
+      @for (product of products; track product.productId) {
+      <th>  {{ product.productId}}</th>
+      <th>  {{ product.productName }}</th>
+      <td>  {{ product.categoryId}}</td>
+      <td>  {{ product.unitPrice }}</td>
+      <td>  {{ product.unitPrice |vatAdded:10 }}</td>
+      <td>  {{ product.unitsInStock}}</td>
+      <td><button click="addToCart(product)" type="button" class="btn btn-success"></button></td>
+      } 
+      
+    
 
-       
-    </tr>
+
+</tr>
+  </tbody>
+   
 </table>

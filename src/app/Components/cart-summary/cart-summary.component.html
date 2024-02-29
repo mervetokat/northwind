@@ -1,0 +1,22 @@
+<li if="cartItems" class="nav-item">
+    <a class="nav-link" href="#">Pricing</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+     sepetiniz
+    </a>
+    <ul class="dropdown-menu">
+      <li><a  class="dropdown-item" >
+        <span class="badge text-bg-secondary"></span>
+        @for (cartItem of cartItems; track cartItem.product.productName) 
+        {
+            
+        {{cartItem.product.productName}}
+        
+        }
+        
+</a></li>
+      
+      <li><a class="dropdown-item" >sepete git</a></li>
+    </ul>
+  </li>
