@@ -18,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     imports: [RouterOutlet, NaviComponent,BrowserAnimationsModule,
       ToastrModule, FormsModule, ProductComponent, CategoryComponent, ReactiveFormsModule, HttpClientModule, TodoComponent]
 })
+
 export class AppComponent {
   title = 'northwind';
-  
+ 
 }
