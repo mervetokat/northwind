@@ -5,7 +5,7 @@ import { ProductComponent } from "./Components/product/product.component";
 import { CategoryComponent } from "./Components/category/category.component";
 import { TodoComponent} from './Components/todo/todo.component';
 import { HttpClientModule} from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
     imports: [RouterOutlet, NaviComponent,BrowserAnimationsModule,
-      ToastrModule, FormsModule, ProductComponent, CategoryComponent, HttpClientModule, TodoComponent]
+      ToastrModule, FormsModule, ProductComponent, CategoryComponent, ReactiveFormsModule, HttpClientModule, TodoComponent]
 })
 export class AppComponent {
   title = 'northwind';
